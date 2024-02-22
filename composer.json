@@ -43,8 +43,8 @@
         }
     },
     "replace": {
-        "rinodrummer/squirephp-continents-it": "^3.4",
-        "rinodrummer/squirephp-countries-it": "^3.4"
+        "rinodrummer/squirephp-continents-it": "3.4.4",
+        "rinodrummer/squirephp-countries-it": "3.4.4"
     },
     "prefer-stable": true
 }
