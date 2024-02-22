@@ -1,5 +1,5 @@
 {
-    "name": "rinodrummer/squirephp-it",
+    "name": "squirephp-italian/squirephp-it",
     "description": "A library containing the Italian translations of Squire models.",
     "keywords": [
         "squire"
@@ -43,8 +43,8 @@
         }
     },
     "replace": {
-        "rinodrummer/squirephp-continents-it": "3.4.4",
-        "rinodrummer/squirephp-countries-it": "3.4.4"
+        "squirephp-italian/continents-it": "3.4.4",
+        "squirephp-italian/countries-it": "3.4.4"
     },
     "prefer-stable": true
 }
