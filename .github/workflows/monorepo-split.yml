@@ -32,7 +32,7 @@ jobs:
             - id: previous-tag
               uses: "WyriHaximus/github-action-get-previous-tag@master"
             - name: ${{ matrix.package }}
-              uses: symplify/github-action-monorepo-split@2.1
+              uses: danharrin/monorepo-split-github-action@v2.3.0
               env:
                   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
               with:
