@@ -24,7 +24,7 @@
             ComposerJsonSection::REQUIRE => [
                 'php' => '^8.0',
                 'illuminate/support' => '^8.0|^9.0|^10.0',
-                'squirephp/repository' => '3.4.4',
+                'squirephp/repository' => '^3.4',
             ],
             ComposerJsonSection::REQUIRE_DEV => [
                 'symplify/monorepo-builder' => '^9.4.21',

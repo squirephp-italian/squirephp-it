@@ -17,12 +17,7 @@
         }
     ],
     "require": {
-        "squirephp/countries": "self.version"
-    },
-    "autoload": {
-        "psr-4": {
-            "Squire\\": "src"
-        }
+        "squirephp/countries": "^3.4"
     },
     "extra": {
         "laravel": {

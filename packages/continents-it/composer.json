@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "squirephp/continents": "self.verion"
+        "squirephp/continents": "^3.4"
     },
     "extra": {
         "laravel": {
