@@ -1,0 +1,38 @@
+{
+    "name": "rinodrummer/squirephp-countries-it",
+    "description": "A library containing the Italian translation of Squire's Country model.",
+    "keywords": [
+        "squire"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/squirephp",
+    "support": {
+        "issues": "https://github.com/squirephp/squire/issues",
+        "source": "https://github.com/squirephp/squire"
+    },
+    "authors": [
+        {
+            "name": "Dan Harrin",
+            "email": "dan@danharrin.com"
+        }
+    ],
+    "require": {
+        "squirephp/countries": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Squire\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Squire\\CountriesItServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
