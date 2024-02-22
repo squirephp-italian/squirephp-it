@@ -26,9 +26,6 @@
                 'illuminate/support' => '^8.0|^9.0|^10.0',
                 'squirephp/repository' => '^3.4',
             ],
-            ComposerJsonSection::REQUIRE_DEV => [
-                'symplify/monorepo-builder' => '^9.4.21',
-            ],
             ComposerJsonSection::MINIMUM_STABILITY => 'dev',
             ComposerJsonSection::PREFER_STABLE => true,
         ]);
