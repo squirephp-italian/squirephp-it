@@ -2,7 +2,13 @@
 
 This package aims to group all the Italian localization for [Squire].
 
-To install specific localization packages, please install them separately.
+To install specific localization packages, please install the model package from
+[Squire] then install what you need from this separately.
+
+|   Model   | Installation command                               |
+|:---------:|----------------------------------------------------|
+| Continent | `composer require squirephp-italian/continents-it` |
+|  Country  | `composer require squirephp-italian/countries-it`  |
 
 | Sub-package  | Installation command                                   |
 |:------------:|--------------------------------------------------------|
