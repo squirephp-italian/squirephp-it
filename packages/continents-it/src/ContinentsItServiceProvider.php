@@ -14,7 +14,7 @@ class ContinentsItServiceProvider extends ServiceProvider
         Repository::registerSource(ItContinentData::class, 'it', __DIR__ . '/../resources/it_data.csv');
 
         Continent::resolveRelationUsing('itData', function (Continent $continentModel) {
-            $continentModel->hasOne(ItContinentData::class, 'id', 'id');
+            $continentModel->hasOne(ItContinentData::class, 'continent_id', 'id');
         });
     }
 }
