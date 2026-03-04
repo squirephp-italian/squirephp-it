@@ -10,6 +10,16 @@ To install specific localization packages, please install the model package from
 | Continent | `composer require squirephp-italian/continents-it` |
 |  Country  | `composer require squirephp-italian/countries-it`  |
 
+## Additional data provided by this package
+
+### Continents
+
+|   Field name    | Description                                                                                    |
+|:---------------:|------------------------------------------------------------------------------------------------|
+| `it_istat_code` | ISTAT code of the Continent, consisting of a single numeric character, valid in the range 1–5. |
+
+This data is accessible via the `itData()` relation on the `Squire\Models\Continent` model.
+
 # Contributions
 
 We are open to contributions, and we hope you can join us on the localization process
