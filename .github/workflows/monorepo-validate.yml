@@ -8,16 +8,16 @@ jobs:
     run-validation:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
             - name: Cache dependencies
-              uses: actions/cache@v2
+              uses: actions/cache@v4
               with:
                   path: vendor
                   key: composer-${{ hashFiles('composer.lock') }}
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
               with:
-                  php-version: 8.1
+                  php-version: 8.5
                   extensions: mbstring, pdo, pdo_sqlite
                   coverage: none
             - name: Install dependencies
