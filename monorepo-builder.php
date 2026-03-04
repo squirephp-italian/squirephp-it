@@ -24,7 +24,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         'require' => [
             'php' => '^8.0',
             'illuminate/support' => '^8.0|^9.0|^10.0|^11.0',
-            'squirephp/repository' => '^3.4',
+            'squirephp/repository' => '^3.10',
         ],
         'minimum-stability' => 'dev',
         'prefer-stable' => true,

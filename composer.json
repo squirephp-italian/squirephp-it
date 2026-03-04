@@ -19,9 +19,9 @@
     "require": {
         "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
         "php": "^8.0",
-        "squirephp/continents": "^3.4",
-        "squirephp/countries": "^3.4",
-        "squirephp/repository": "^3.4"
+        "squirephp/continents": "^3.10",
+        "squirephp/countries": "^3.10",
+        "squirephp/repository": "^3.10"
     },
     "autoload": {
         "psr-4": {
@@ -34,7 +34,7 @@
     "require-dev": {
         "symplify/monorepo-builder": "^9.4.21",
         "friendsofphp/php-cs-fixer": "^3.50",
-        "pestphp/pest": "^2.34"
+        "pestphp/pest": "^v4.4.1"
     },
     "extra": {
         "laravel": {
@@ -45,8 +45,8 @@
         }
     },
     "replace": {
-        "squirephp-italian/continents-it": "3.5.0",
-        "squirephp-italian/countries-it": "3.5.0"
+        "squirephp-italian/continents-it": "3.10.1",
+        "squirephp-italian/countries-it": "3.10.1"
     },
     "prefer-stable": true,
     "config": {
