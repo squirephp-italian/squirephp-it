@@ -3,22 +3,34 @@ name: monorepo-split
 on:
     push:
         tags:
-            - '*'
+            - "*"
 
 jobs:
     provide-packages-list:
         runs-on: ubuntu-latest
+        outputs:
+            matrix: ${{ steps.packages-list.outputs.matrix }}
         steps:
-            - uses: actions/checkout@v4
-            - uses: shivammathur/setup-php@v2
+            - name: Checkout (fetch full history + tags)
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
               with:
                   php-version: 8.5
                   coverage: none
-            - uses: "ramsey/composer-install@v2"
-            - id: packages-list
-              run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json)"
-        outputs:
-            matrix: ${{ steps.packages-list.outputs.matrix }}
+            
+            - name: Install dependencies
+              uses: ramsey/composer-install@v2
+            
+            - name: Build packages matrix
+              id: packages-list
+              shell: bash
+              run: |
+                  set -euo pipefail
+                  echo "matrix=$(vendor/bin/monorepo-builder packages-json)" >> "$GITHUB_OUTPUT"
     
     split-monorepo:
         needs: provide-packages-list
@@ -26,20 +38,23 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                package: ${{fromJson(needs.provide-packages-list.outputs.matrix)}}
+                package: ${{ fromJson(needs.provide-packages-list.outputs.matrix) }}
+        
         steps:
-            - uses: actions/checkout@v4
-            - id: previous-tag
-              uses: "WyriHaximus/github-action-get-previous-tag@master"
-            - name: ${{ matrix.package }}
+            - name: Checkout (fetch full history + tags)
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            
+            - name: Split package into dedicated repository (and push tag)
               uses: danharrin/monorepo-split-github-action@v2.3.0
               env:
                   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
               with:
-                  package_directory: 'packages/${{ matrix.package }}'
-                  repository_organization: 'squirephp-italian'
-                  repository_name: '${{ matrix.package }}'
+                  package_directory: "packages/${{ matrix.package }}"
+                  repository_organization: "squirephp-italian"
+                  repository_name: "${{ matrix.package }}"
                   branch: main
-                  tag: ${{ steps.previous-tag.outputs.tag }}
+                  tag: ${{ github.ref_name }}
                   user_name: "Gennaro Landolfi"
                   user_email: "code@rinodrummer.dev"
