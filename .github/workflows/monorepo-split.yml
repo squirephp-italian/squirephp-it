@@ -12,7 +12,7 @@ jobs:
             - uses: actions/checkout@v4
             - uses: shivammathur/setup-php@v2
               with:
-                  php-version: 8.1
+                  php-version: 8.5
                   coverage: none
             - uses: "ramsey/composer-install@v2"
             - id: packages-list
