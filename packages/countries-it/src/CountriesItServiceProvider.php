@@ -14,7 +14,7 @@ class CountriesItServiceProvider extends ServiceProvider
         Repository::registerSource(ItCountryData::class, 'it', __DIR__ . '/../resources/it_data.csv');
 
         Country::resolveRelationUsing('itData', function (Country $countryModel) {
-            $countryModel->hasOne(ItCountryData::class, 'country_id', 'id');
+            return $countryModel->hasOne(ItCountryData::class, 'country_id', 'id');
         });
     }
 }
